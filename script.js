@@ -138,3 +138,26 @@ deleteBtn.addEventListener("click", () => {
   calculator.delete();
   calculator.updateDisplay();
 });
+
+document.addEventListener("keydown", (event) => {
+  handleKeyboardInput(event.key);
+});
+
+function handleKeyboardInput(key) {
+  if (!isNaN(key) || key === ".") {
+    calculator.appendNumber(key);
+    calculator.updateDisplay();
+  } else if (["+", "-", "*", "/"].includes(key)) {
+    calculator.chooseOperation(key);
+    calculator.updateDisplay();
+  } else if (key === "Enter") {
+    calculator.compute();
+    calculator.updateDisplay();
+  } else if (key === "Backspace") {
+    calculator.delete();
+    calculator.updateDisplay();
+  } else if (key === "Escape") {
+    calculator.clear();
+    calculator.updateDisplay();
+  }
+}
