@@ -14,6 +14,12 @@ class Calculator {
     this.currentOperand = this.currentOperand.toString().slice(0, -1);
   }
 
+  handleError(message) {
+    alert(`Error: ${message}`);
+    this.clear();
+    this.updateDisplay();
+  }
+
   appendNumber(number) {
     if (number === "." && this.currentOperand.includes(".")) return;
     this.currentOperand = this.currentOperand.toString() + number.toString();
@@ -33,7 +39,10 @@ class Calculator {
     let computation;
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
-    if (isNaN(prev) || isNaN(current)) return;
+    if (isNaN(prev) || isNaN(current)) {
+      this.handleError("Invalid input");
+      return;
+    }
     switch (this.operation) {
       case "+":
         computation = prev + current;
@@ -45,6 +54,10 @@ class Calculator {
         computation = prev * current;
         break;
       case "/":
+        if (current === 0) {
+          this.handleError("Cannot divide by zero");
+          return;
+        }
         computation = prev / current;
         break;
       default:
