@@ -17,13 +17,18 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Chivo Mono";
+  font-weight: 400;
 }
 
 body {
-  font-family: "Chivo Mono";
-  font-weight: 400;
   padding: 0;
   margin: 0;
+  height: 100vh;
+  background: linear-gradient(to right, var(--iris), var(--love));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -38,3 +43,67 @@ h5 {
 html {
   font-size: 100%;
 } /* 16px */
+
+.calculator-container {
+  background: var(--overlay);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.output {
+  background: var(--foam);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100px;
+  width: 330px;
+  padding: 16px;
+  margin: 16px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: hsl(249, 22%, 24%);
+  font-size: 1rem;
+}
+
+.output .current-operand {
+  color: hsl(249, 22%, 12%);
+  font-size: 2rem;
+}
+
+.key-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+button {
+  padding: 16px;
+  font-size: 1rem;
+  width: 75px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid var(--love);
+  border-radius: 5px;
+  background: var(--overlay);
+  color: var(--love);
+  transition: border ease-in-out, color ease-in-out;
+}
+
+.big {
+  width: 160px;
+}
+
+button:hover {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
