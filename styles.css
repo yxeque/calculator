@@ -21,6 +21,10 @@
   font-weight: 400;
 }
 
+html {
+  font-size: 100%;
+} /* 16px */
+
 body {
   padding: 0;
   margin: 0;
@@ -28,37 +32,22 @@ body {
   background: radial-gradient(circle, var(--love), var(--iris));
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Chivo Mono";
-  font-weight: 700;
-}
-
-html {
-  font-size: 100%;
-} /* 16px */
-
 .calculator-container {
-  flex: 1;
-  margin: 32px;
+  flex: 0 0 auto;
   background: var(--overlay);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 500px;
-  max-width: 400px;
-  width: 90%;
+  width: 400px;
   border: 1px solid var(--gold);
   border-radius: 10px;
   overflow: hidden;
+  margin: auto;
 }
 
 .output {
@@ -117,7 +106,7 @@ button:hover {
 
 .footer {
   color: var(--overlay);
-  font-size: 0.75rem;
+  font-size: 1rem;
   padding: 16px;
 }
 
