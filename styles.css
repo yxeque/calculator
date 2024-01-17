@@ -51,7 +51,8 @@ html {
   justify-content: center;
   align-items: center;
   height: 500px;
-  width: 400px;
+  max-width: 400px;
+  width: 90%;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -69,6 +70,7 @@ html {
   margin: 16px;
   word-wrap: break-word;
   word-break: break-all;
+  overflow: hidden;
 }
 
 .output .previous-operand {
