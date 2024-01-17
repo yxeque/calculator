@@ -103,3 +103,13 @@ numberBtn.forEach((button) => {
     calculator.updateDisplay();
   });
 });
+
+clearBtn.addEventListener("click", (button) => {
+  calculator.clear();
+  calculator.updateDisplay();
+});
+
+deleteBtn.addEventListener("click", (button) => {
+  calculator.delete();
+  calculator.updateDisplay();
+});
