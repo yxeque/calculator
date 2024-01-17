@@ -1,3 +1,21 @@
+class Calculator {
+  constructor(previousDisplay, currentDisplay) {
+    this.previousDisplay = previousDisplay;
+    this.currentDisplay = currentDisplay;
+  }
+  clear() {}
+
+  delete() {}
+
+  appendNumber() {}
+
+  compute() {}
+
+  chooseOperation() {}
+
+  updateDisplay() {}
+}
+
 // Reference
 const previousDisplay = document.querySelector("[data-previous-operand]");
 const currentDisplay = document.querySelector("[data-current-operand]");
