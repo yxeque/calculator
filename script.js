@@ -44,7 +44,7 @@ class Calculator {
       case "*":
         computation = prev * current;
         break;
-      case "÷":
+      case "/":
         computation = prev / current;
         break;
       default:
@@ -104,12 +104,24 @@ numberBtn.forEach((button) => {
   });
 });
 
-clearBtn.addEventListener("click", (button) => {
+operatorBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.chooseOperation(button.innerText);
+    calculator.updateDisplay();
+  });
+});
+
+equalsBtn.addEventListener("click", () => {
+  calculator.compute();
+  calculator.updateDisplay();
+});
+
+clearBtn.addEventListener("click", () => {
   calculator.clear();
   calculator.updateDisplay();
 });
 
-deleteBtn.addEventListener("click", (button) => {
+deleteBtn.addEventListener("click", () => {
   calculator.delete();
   calculator.updateDisplay();
 });
