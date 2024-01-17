@@ -96,3 +96,10 @@ const deleteBtn = document.querySelector("[data-delete]");
 const clearBtn = document.querySelector("[data-clear]");
 
 const calculator = new Calculator(previousDisplay, currentDisplay);
+
+numberBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.appendNumber(button.innerText);
+    calculator.updateDisplay();
+  });
+});
